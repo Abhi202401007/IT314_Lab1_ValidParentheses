@@ -7,10 +7,15 @@ bool isValid(string s) {
     stack<char> st;
 
     for (char c : s) {
+
+        // Opening brackets
         if (c == '(' || c == '{' || c == '[') {
             st.push(c);
         }
-        else {
+
+        // Closing brackets
+        else if (c == ')' || c == '}' || c == ']') {
+
             if (st.empty())
                 return false;
 
@@ -26,7 +31,8 @@ bool isValid(string s) {
         }
     }
 
-    return true;
+    // Stack empty hona chahiye
+    return st.empty();
 }
 
 int main() {
@@ -41,4 +47,4 @@ int main() {
         cout << "Invalid Parentheses" << endl;
 
     return 0;
-}
+}}
